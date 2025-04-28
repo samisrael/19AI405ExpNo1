@@ -9,7 +9,7 @@ class HealthMonitoringAgent:
             current_health_state = self.sensors.get_health_state()
             action = self.choose_action(current_health_state)
             self.actuators.perform_action(action)
-            if self.choose_action(current_health_state)=="No specific action needed":
+            if action == "No specific action needed":
                 break
 
     def choose_action(self, current_health_state):
